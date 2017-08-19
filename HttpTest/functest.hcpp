@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<?cpp
+resp->putBodyData("hello world",sizeof("hello world"));
+?>
+<video width="320" height="240" controls="controls">
+  <source src="movie.ogg" type="video/ogg">
+  <source src="movie.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<?cpp resp->putBodyData("hello",sizeof("hello")); ?>
+</body>
+</html>

@@ -1,0 +1,13 @@
+2
+2
+3
+#include <string>
+#include "../HttpServer/include.hpp"
+using namespace std;
+extern "C"
+{
+	HttpRequest* req = session->getHttpRequest();
+	HttpResponse* resp = session->getHttpResponse();
+	session->startResponse();
+	return true;
+}

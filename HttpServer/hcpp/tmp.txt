@@ -1,0 +1,6 @@
+parse dir:
+cpp.templete hcpp(main.cpp hcpp.hpp)
+
+
+module code dir:
+filemanager.hpp hcppfile.hpp module.cpp

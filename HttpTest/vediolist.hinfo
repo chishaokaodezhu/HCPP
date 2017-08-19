@@ -1,0 +1,24 @@
+2
+312
+24
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>vedio list</title> 
+<style type="text/css">
+.vitem{
+	width:100%;
+	border-bottom: 3px solid #C1FFE4;
+	padding-top: 8px;
+	font-size: 80px;
+	color:#339900;
+}
+</style>
+</head>
+<body>
+	<div id="mainbox" style="width:100%;height:auto;padding-top: 24px">
+		
+	</div>
+</body>
+</html>

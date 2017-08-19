@@ -1,0 +1,45 @@
+#include "commonfile/encodeurl.hpp"
+#include <unistd.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <string.h>
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>vedio list</title> 
+<style type="text/css">
+.vitem{
+	width:100%;
+	border-bottom: 3px solid #C1FFE4;
+	padding-top: 8px;
+	font-size: 80px;
+	color:#339900;
+}
+</style>
+</head>
+<body>
+	<div id="mainbox" style="width:100%;height:auto;padding-top: 24px">
+		<?cpp
+		struct stat s;
+		lstat("/home/gliu/ServerRoot/vedio",&s);
+		struct dirent* filename;
+		DIR* dir = opendir("/home/gliu/ServerRoot/vedio");
+		char buf[256];
+		while((filename = readdir(dir)) != nullptr)
+		{
+			if(strcmp(filename->d_name,"." ) == 0 ||
+			   strcmp(filename->d_name,"..") == 0)
+			   continue;
+			string path = "http://192.168.1.8/vedio/";
+			path.append(filename->d_name);
+			sprintf(buf,"<div class=\"vitem\" onclick=\"window.open('%s')\">"
+						"%s"
+						"</div>\n\0",
+						path.c_str(),filename->d_name);
+			resp->putBodyData(buf,strlen(buf));
+		}
+		?>
+	</div>
+</body>
+</html>
